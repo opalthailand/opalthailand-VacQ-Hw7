@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const cookieParser = require("cookie-parser");
+const cors = require('cors');
 
 dotenv.config({ path: "./config/config.env" });
 
@@ -20,6 +21,7 @@ app.use(express.json());
 
 // Cookie parser
 app.use(cookieParser());
+app.use(cors());
 
 //Mount routers
 app.use('/api/v1/hospitals',hospitals);
